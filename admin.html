@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — LuminaryFrame Studios</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    /* small admin specific tweaks */
+    .admin-grid{ display:grid; grid-template-columns: 1fr 380px; gap:18px; align-items:start; }
+    .booking-row{ display:flex; justify-content:space-between; gap:12px; align-items:center; padding:10px 0; border-bottom:1px dashed rgba(255,255,255,0.03); }
+    .booking-controls button{ margin-left:8px; }
+    .settings-card input[type="file"]{ display:block; }
+    .status-pill{ padding:6px 10px; border-radius:999px; font-weight:700; font-size:13px; }
+    .status-new{ background:#ffb86b; color:#111 }
+    .status-approved{ background:#7bed9f; color:#042 }
+    .status-rejected{ background:#ff6b6b; color:#111 }
+    .price-input{ width:110px; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header style="display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <h1 style="margin:0">Admin Panel</h1>
+        <div class="muted">Manage bookings, samples, pricing, logo, and send notifications</div>
+      </div>
+      <div>
+        <button id="signOutBtn" class="btn ghost">Sign out</button>
+      </div>
+    </header>
+
+    <section style="margin-top:18px;" class="admin-grid">
+      <!-- Left column: bookings -->
+      <div>
+        <div class="card">
+          <h3>Recent Bookings</h3>
+          <div id="bookingsContainer">Loading bookings…</div>
+        </div>
+
+        <div class="card" style="margin-top:16px;">
+          <h3>Samples</h3>
+          <div id="samplesContainer">Loading samples…</div>
+        </div>
+      </div>
+
+      <!-- Right column: settings & actions -->
+      <aside>
+        <div class="card settings-card">
+          <h3>Site Settings</h3>
+          <div style="margin-bottom:8px">
+            <label>Logo (current):</label>
+            <div id="logoPreview" style="height:60px;display:flex;align-items:center;gap:8px"></div>
+          </div>
+
+          <label>Upload new logo (PNG/JPG)
+            <input type="file" id="logoFile" accept="image/*">
+          </label>
+          <button id="uploadLogoBtn" class="btn">Upload & Save Logo</button>
+          <div id="logoMsg" class="note"></div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h3>Price Presets</h3>
+          <div id="priceList">Loading price presets…</div>
+          <div style="margin-top:10px;">
+            <input id="newType" placeholder="New type (eg. Cinematic)" style="width:60%" />
+            <input id="newPrice" placeholder="Price (₹)" class="price-input" />
+            <button id="addPriceBtn" class="btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h3>Send Email (manual)</h3>
+          <label>Customer email<input id="mailTo" placeholder="customer@example.com"></label>
+          <label>Subject<input id="mailSub" placeholder="Subject"></label>
+          <label>Message<textarea id="mailBody" rows="5" placeholder="Message body"></textarea></label>
+          <button id="sendMailBtn" class="btn gradient">Send Email</button>
+          <div id="mailMsg" class="note"></div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/admin-dashboard.js"></script>
+</body>
+</html>

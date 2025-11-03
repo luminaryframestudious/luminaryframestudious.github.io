@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LuminaryFrame Studios</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand">
+        <div class="logo-circle">LF</div>
+        <div>
+          <div class="brand-name">LuminaryFrame Studios</div>
+          <div class="brand-sub">Cinematic Video Editing • Real, professional work</div>
+        </div>
+      </div>
+
+      <nav class="top-nav">
+        <a class="btn ghost" href="#gallery">Explore Edits</a>
+        <a class="btn ghost" href="#booking">Book Now</a>
+        <a class="btn cta" id="contactBtn" href="#booking">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <small class="muted">Professional Studio — No Demos, Real Work</small>
+        <h1 class="hero-title">LuminaryFrame Studios</h1>
+        <p class="hero-sub">Transform Your Clips Into Cinematic Masterpieces. We provide cinematic edits, VFX, AI edits, transitions and affordable prices for creators and businesses.</p>
+
+        <div class="hero-ctas">
+          <button class="btn gradient" onclick="location.href='#booking'">Hire Us</button>
+          <button class="btn ghost" onclick="location.href='#gallery'">Explore Edits</button>
+          <button class="btn ghost" onclick="location.href='#contact'">Contact Now</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="container section">
+      <h2 class="section-title">Recent edits</h2>
+      <div class="grid cards">
+        <div class="card preview">
+          <div class="thumb-placeholder"></div>
+          <div class="card-caption">Cinematic Trailer Cut — 0:40</div>
+        </div>
+        <div class="card preview">
+          <div class="thumb-placeholder"></div>
+          <div class="card-caption">VFX Short — 0:22</div>
+        </div>
+        <div class="card preview">
+          <div class="thumb-placeholder"></div>
+          <div class="card-caption">Smooth Transition — 0:15</div>
+        </div>
+      </div>
+
+      <div class="quick-booking card">
+        <h3>Quick Booking</h3>
+        <p>Choose edit type, upload clips, and pay via UPI on your phone. (Payment integration during Stage 3.)</p>
+        <div class="row">
+          <button class="btn gradient" onclick="location.href='#booking'">Start Booking</button>
+          <button class="btn ghost" onclick="location.href='#gallery'">See Gallery</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2 class="section-title">Choose App & Edit Type</h2>
+      <div class="grid three">
+        <div class="card">
+          <h4>Editing Apps</h4>
+          <div class="chips">
+            <span class="chip">CapCut</span>
+            <span class="chip">Alight Motion</span>
+            <span class="chip">VN</span>
+            <span class="chip">After Effects</span>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Edit Styles</h4>
+          <div class="chips">
+            <span class="chip">Cinematic</span>
+            <span class="chip">VFX</span>
+            <span class="chip">AI Edit</span>
+            <span class="chip">Transition</span>
+            <span class="chip">3D Edit</span>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Pricing & Speed</h4>
+          <p class="muted">Affordable: Most edits are under ₹100. Choose a preset or ask for a custom quote in booking notes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="container section booking-section">
+      <h2 class="section-title">Booking</h2>
+      <form id="bookingForm" class="card booking-card">
+        <label>Full name
+          <input type="text" id="bf-name" placeholder="Your full name" required>
+        </label>
+
+        <label>Email
+          <input type="email" id="bf-email" placeholder="you@example.com" required>
+        </label>
+
+        <label>Phone
+          <input type="tel" id="bf-phone" placeholder="+91 9xxxxxxxxx" required>
+        </label>
+
+        <div class="row small">
+          <label class="select">
+            Edit app
+            <select id="bf-app">
+              <option>CapCut</option>
+              <option>Alight Motion</option>
+              <option>VN</option>
+              <option>After Effects</option>
+            </select>
+          </label>
+
+          <label class="select">
+            Edit type
+            <select id="bf-type">
+              <option>Cinematic</option>
+              <option>VFX</option>
+              <option>AI Edit</option>
+              <option>Transition</option>
+              <option>3D Edit</option>
+            </select>
+          </label>
+        </div>
+
+        <label>Upload clips (optional)
+          <input type="file" id="bf-file" accept="video/*,video/mp4,video/quicktime">
+        </label>
+
+        <label>Notes
+          <textarea id="bf-notes" placeholder="Tell us about the clip and the edit you want..." rows="4"></textarea>
+        </label>
+
+        <div class="row">
+          <button class="btn gradient" type="submit">Submit Booking</button>
+          <button class="btn ghost" type="button" id="clearBooking">Clear</button>
+        </div>
+
+        <div id="bookingStatus" class="note"></div>
+      </form>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        © 2025 LuminaryFrame Studios • Contact: +91 9239529167 • mallikabdurrahman37@gmail.com
+      </div>
+    </footer>
+  </main>
+
+  <!-- ADMIN login overlay -->
+  <div id="adminOverlay" class="overlay hidden">
+    <div class="overlay-card">
+      <h3>Admin Login</h3>
+      <p>Sign in with your LuminaryFrame Gmail</p>
+      <button id="googleSignIn" class="btn google">Sign in with Google</button>
+      <button id="closeOverlay" class="btn ghost">Close</button>
+      <div id="adminSignMsg" class="note"></div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/booking.js"></script>
+</body>
+</html>
