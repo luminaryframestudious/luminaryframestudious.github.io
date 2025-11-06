@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Dashboard — LuminaryFrame Studios</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    main {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #ffd700;
+    }
+    .booking-list {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .booking-item {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 15px;
+      border: 1px solid #333;
+    }
+    .booking-item h3 {
+      margin: 0 0 8px 0;
+      color: #ffda6a;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .approve {
+      background: #00c853;
+      color: #fff;
+    }
+    .reject {
+      background: #d32f2f;
+      color: #fff;
+    }
+    .upload {
+      background: #2962ff;
+      color: #fff;
+    }
+    .status {
+      margin-top: 6px;
+      font-size: 0.9em;
+      color: #bbb;
+    }
+    header {
+      text-align: center;
+      padding: 20px 0;
+      background: #000;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: #aaa;
+      border-top: 1px solid #222;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <p>Manage Bookings • Approve Payments • Upload Samples</p>
+  </header>
+
+  <main>
+    <h2>Client Bookings</h2>
+    <div id="bookingList" class="booking-list">
+      <!-- Bookings will load here via admin-dashboard.js -->
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> LuminaryFrame Studios — Admin Panel</p>
+  </footer>
+
+  <!-- Firebase SDK -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage.js"></script>
+
+  <!-- SweetAlert2 for alerts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <!-- Admin JS -->
+  <script type="module" src="admin-dashboard.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LuminaryFrame Studios — Admin Panel</title>
+
+  <!-- ✅ Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ✅ SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <header class="admin-header">
+    <h1>LuminaryFrame Studios — Admin Dashboard</h1>
+    <p>Manage client bookings, approve/reject payments, and upload samples</p>
+  </header>
+
+  <main class="admin-container">
+    <!-- 🔹 Booking management section -->
+    <section id="bookings-section" class="admin-section">
+      <h2>Client Bookings</h2>
+      <div id="bookingList">
+        <p>Loading bookings...</p>
+      </div>
+    </section>
+
+    <!-- 🔹 Divider -->
+    <hr class="divider" />
+
+    <!-- 🔹 Samples management section -->
+    <section id="samples-section" class="admin-section">
+      <h2>Upload Samples</h2>
+
+      <div class="form-card">
+        <label for="title">Title</label>
+        <input type="text" id="title" placeholder="Sample title" />
+
+        <label for="category">Category</label>
+        <select id="category">
+          <option value="">Select category</option>
+          <option value="Cinematic">Cinematic</option>
+          <option value="VFX">VFX</option>
+          <option value="3D">3D</option>
+          <option value="AI">AI</option>
+        </select>
+
+        <label for="price">Price</label>
+        <input type="number" id="price" placeholder="Enter price (₹)" />
+
+        <label for="fileInput">Upload File</label>
+        <input type="file" id="fileInput" accept="image/*,video/*" />
+
+        <button id="uploadBtn" class="btn btn-primary">Upload Sample</button>
+      </div>
+
+      <div id="sampleList" class="sample-list"></div>
+    </section>
+  </main>
+
+  <footer class="admin-footer">
+    <p>© 2025 LuminaryFrame Studios. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ✅ Firebase (modular CDN) -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage.js"></script>
+
+  <!-- ✅ Admin Dashboard Logic -->
+  <script type="module" src="admin-dashboard.js"></script>
+
+  <!-- ✅ Admin Samples Logic -->
+  <script type="module" src="admin-samples.js"></script>
+</body>
+</html>

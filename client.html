@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Panel - LuminaryFrame Studios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <h1>LuminaryFrame Studios</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><button id="logoutBtn">Logout</button></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Welcome to Your Client Panel</h2>
+
+        <!-- Order Section -->
+        <section id="orderSection">
+            <h3>Place a New Order</h3>
+            <form id="orderForm">
+                <input type="text" name="service" placeholder="Enter the service you need" required>
+                <button type="submit">Book Order</button>
+            </form>
+        </section>
+
+        <!-- Orders List -->
+        <section id="ordersList">
+            <h3>Your Orders</h3>
+            <ul id="ordersUl"></ul>
+        </section>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+    <!-- Booking & Client Scripts -->
+    <script src="booking.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>

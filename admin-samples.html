@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — Manage Samples | LuminaryFrame Studios</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- SweetAlert for alerts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <h1>🎬 LuminaryFrame Studios — Admin Sample Manager</h1>
+    <nav>
+      <a href="admin-dashboard.html" class="btn">Dashboard</a>
+      <a href="auth.html" class="btn">Logout</a>
+    </nav>
+  </header>
+
+  <main class="admin-main">
+    <section class="upload-section">
+      <h2>Upload New Sample</h2>
+      <form id="uploadForm">
+        <input type="text" id="title" placeholder="Title" required />
+        <select id="category" required>
+          <option value="">Select Category</option>
+          <option value="Cinematic">Cinematic</option>
+          <option value="VFX">VFX</option>
+          <option value="AI Edit">AI Edit</option>
+          <option value="3D Edit">3D Edit</option>
+          <option value="Transition">Transition</option>
+        </select>
+        <input type="number" id="price" placeholder="Price (₹)" required />
+        <input type="file" id="fileInput" accept="video/*,image/*" required />
+        <button type="button" id="uploadBtn" class="btn btn-primary">Upload Sample</button>
+      </form>
+    </section>
+
+    <section class="samples-section">
+      <h2>Uploaded Samples</h2>
+      <div id="sampleList" class="sample-list">
+        <p>Loading samples...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="admin-footer">
+    <p>© 2025 LuminaryFrame Studios. All rights reserved.</p>
+  </footer>
+
+  <!-- Firebase SDKs -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage.js"></script>
+
+  <!-- Admin logic -->
+  <script type="module" src="admin-samples.js"></script>
+</body>
+</html>
