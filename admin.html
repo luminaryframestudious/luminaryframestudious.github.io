@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — LuminaryFrame</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <header class="admin-header">
+    <h1>Admin Dashboard</h1>
+  </header>
+
+  <main class="admin-container section">
+    <section id="bookings-section">
+      <h2>Client Bookings</h2>
+      <div id="bookingList">Loading bookings...</div>
+    </section>
+
+    <hr class="divider">
+
+    <section id="samples-section">
+      <h2>Upload Samples / Edit Types</h2>
+      <div class="form-card">
+        <label>Title</label>
+        <input id="sampleTitle" type="text">
+        <label>Category</label>
+        <select id="sampleCategory"><option value="">Select</option><option>Cinematic</option><option>VFX</option><option>3D</option><option>AI</option></select>
+        <label>Price</label>
+        <input id="samplePrice" type="number">
+        <label>File</label>
+        <input type="file" id="sampleFile" accept="image/*,video/*">
+        <div style="margin-top:10px">
+          <button id="uploadSampleBtn" class="btn btn-primary">Upload Sample</button>
+        </div>
+      </div>
+      <div id="sampleList" style="margin-top:12px"></div>
+    </section>
+  </main>
+
+  <footer class="admin-footer">© 2025 LuminaryFrame Studios</footer>
+
+  <script type="module" src="admin-dashboard.js"></script>
+  <script type="module" src="admin-samples.js"></script>
+</body>
+</html>

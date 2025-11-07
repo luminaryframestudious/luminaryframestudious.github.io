@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LuminaryFrame Studios</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">
+      <div class="logo">LF</div>
+      <div class="brand-text">
+        <div class="title">LuminaryFrame Studios</div>
+        <div class="subtitle">Cinematic Video Editing</div>
+      </div>
+    </div>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="gallery.html" class="small">Explore Edits</a>
+      <a href="index.html#booking" class="small">Book Now</a>
+      <a href="auth.html" class="small">Login</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>LuminaryFrame Studios</h1>
+      <p class="lead">Transform Your Clips Into Cinematic Masterpieces. We provide cinematic edits, VFX, AI edits and more.</p>
+      <div>
+        <a href="#booking" class="btn btn-primary">Start Booking</a>
+        <a href="gallery.html" class="btn btn-outline">See Gallery</a>
+      </div>
+      <div class="recent-grid" aria-hidden="true">
+        <div class="shot">Cinematic Trailer Cut — 0:40</div>
+        <div class="shot">VFX Short — 0:22</div>
+        <div class="shot">Smooth Transition — 0:15</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="booking" class="section">
+      <h2>Booking</h2>
+      <div class="form-card" id="bookingCard">
+        <form id="orderForm">
+          <label>Full name</label>
+          <input type="text" id="fullName" name="fullName" required>
+
+          <label>Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label>Phone</label>
+          <input type="tel" id="phone" name="phone">
+
+          <div class="row">
+            <div class="col">
+              <label>Edit app</label>
+              <select id="service" name="service">
+                <option>CapCut</option>
+                <option>Alight Motion</option>
+                <option>VN</option>
+                <option>After Effects</option>
+              </select>
+            </div>
+            <div class="col">
+              <label>Edit type</label>
+              <select id="style" name="style">
+                <option>Cinematic</option>
+                <option>VFX</option>
+                <option>AI Edit</option>
+                <option>Transition</option>
+                <option>3D Edit</option>
+              </select>
+            </div>
+          </div>
+
+          <label>Notes (what do you want?)</label>
+          <textarea id="message" name="message" rows="4" placeholder="Describe the edit you'd like..."></textarea>
+
+          <label>Upload clips or images (mp4, mov, jpg, png) — multiple allowed</label>
+          <input type="file" id="fileInput" multiple accept="video/*,image/*">
+
+          <!-- Payment / trial info -->
+          <p class="small muted">Pay ₹5 first to UPI ID: <strong id="upiId">9239529167@fam</strong></p>
+
+          <div style="margin:8px 0">
+            <button type="button" id="payBtn" class="pay-btn">Pay Now</button>
+          </div>
+
+          <!-- Transaction ID field: hidden by default; required when trials exhausted -->
+          <label id="txnLabel" style="display:none">UPI Transaction ID (required for paid orders)</label>
+          <input type="text" id="txnId" name="txnId" style="display:none" placeholder="Enter UPI transaction id">
+
+          <div style="margin-top:12px">
+            <button type="submit" class="btn btn-primary">Submit Booking</button>
+          </div>
+        </form>
+      </div>
+      <p class="small muted">You get 5 free trial orders when you sign up with a new email.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 LuminaryFrame Studios
+  </footer>
+
+  <!-- EmailJS SDK (must come before script that calls emailjs.init) -->
+  <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+
+  <!-- Main app module -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
